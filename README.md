@@ -305,7 +305,7 @@ No other libraries. No ML frameworks.
 
 ## Contact
 mary.ashena@gmail.com
-
+[https://github.com/0mary0/NeuroGrid]
 ---
 
 *All thresholds provisional. See `neurogrid_config.json` and
