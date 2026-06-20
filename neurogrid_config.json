@@ -1,0 +1,58 @@
+{
+  "_note": "NeuroGrid Go/No-Go — Clinician Configuration File. All values marked PROVISIONAL. Edit this file to tune parameters without touching the source code. Missing keys fall back to hardcoded defaults. See README for parameter descriptions and clinical guidance.",
+
+  "protocol": {
+    "_note": "Task timing and calibration parameters.",
+    "go_probability":               0.75,
+    "exposure_duration_ms":         500,
+    "inter_stimulus_interval_ms":   1000,
+    "late_press_window_ms":         200,
+    "buffer_trials":                10,
+    "required_baseline_hits":       10,
+    "max_calibration_trials":       25,
+    "anticipation_floor_ms":        150,
+    "min_trials_for_vigilance_profile": 15,
+    "plateau_block_size":           10,
+    "plateau_tolerance_ms":         25.0,
+    "plateau_required_stable":      2
+  },
+
+  "estimator": {
+    "_note": "Behavioural state estimator thresholds and weights. All PROVISIONAL pending clinical validation.",
+    "flow_floor":                   0.30,
+    "hysteresis_margin":            0.10,
+    "min_nogo_for_confidence":      3,
+    "min_go_trials_for_confidence": 3,
+    "min_hits_for_confidence":      3,
+    "thresholds": {
+      "omission_rate":     {"zero_at": 0.00, "one_at": 0.40},
+      "rt_cv_multiplier":  {"zero_at": 1.00, "one_at": 2.00},
+      "sdi_decline":       {"zero_at": 0.00, "one_at": 2.00},
+      "sdi_speed":         {"zero_at": 0.00, "one_at": -2.00},
+      "inhibition_failure":{"zero_at": 0.00, "one_at": 0.50},
+      "anticipation_rate": {"zero_at": 0.00, "one_at": 0.30},
+      "commission_speed":  {"zero_at": 1.00, "one_at": 0.50},
+      "late_rate":         {"zero_at": 0.00, "one_at": 0.20}
+    },
+    "problem_weights": {
+      "ATTENTION_LAPSE":    {"omission": 0.60, "cv": 0.40},
+      "PERFORMANCE_DECLINE":{"sdi_pos": 0.60, "omission": 0.40},
+      "HIGH_IMPULSIVITY":   {"inhibition": 0.50, "anticipation": 0.30, "commission_speed": 0.20},
+      "TIMING_PRESSURE":    {"late": 1.00}
+    }
+  },
+
+  "policy": {
+    "_note": "Adaptation policy gating and knob bounds. All PROVISIONAL.",
+    "problem_action_threshold": 0.50,
+    "headroom_action_threshold": 0.60,
+    "sustain_required": 5,
+    "cooldown_trials": 5,
+    "knobs": {
+      "exposure_ms":     {"min": 300, "max": 800,  "step": 50,   "start": 500},
+      "isi_ms":          {"min": 600, "max": 1500, "step": 100,  "start": 1000},
+      "go_probability":  {"min": 0.60,"max": 0.85, "step": 0.05, "start": 0.75},
+      "similarity_level":{"min": 1,   "max": 5,    "step": 1,    "start": 1}
+    }
+  }
+}
