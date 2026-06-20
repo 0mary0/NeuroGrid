@@ -251,7 +251,7 @@ warning instead of crashing.
 |---|---|---|
 | `flow_floor` | 0.30 | What evidence level is genuinely too low to call a problem — needs comparison against normative SART data |
 | `problem_action_threshold` | 0.50 | Sensitivity vs. false-trigger tradeoff, needs multi-participant testing |
-| `sustain_required` | 5 | Justified by an offline replay of one real session (see `sustain_replay_analysis.md`), not yet validated across participants |
+| `sustain_required` | 5 | Justified by an offline replay of one real session (see [sustain_replay_analysis.md](sustain_replay_analysis.md)), not yet validated across participants |
 | Feature weights | see `neurogrid_config.json` → `estimator.problem_weights` | Needs empirical derivation from labeled, multi-participant data, ideally EEG-anchored |
 | Feature thresholds | see `neurogrid_config.json` → `estimator.thresholds` | Directionally based on SART literature, but the exact cutoff numbers are engineering guesses |
 | `late_press_window_ms` | 200 | Needs comparison against motor response time literature for this population |
@@ -305,8 +305,8 @@ No other libraries. No ML frameworks.
 
 ## Contact
 mary.ashena@gmail.com
-[https://github.com/0mary0/NeuroGrid]
+
 ---
 
 *All thresholds provisional. See `neurogrid_config.json` and
-`sustain_replay_analysis.md` for parameter justifications.*
+[sustain_replay_analysis.md](sustain_replay_analysis.md) for parameter justifications.*
