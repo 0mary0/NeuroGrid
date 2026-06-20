@@ -308,5 +308,5 @@ mary.ashena@gmail.com
 
 ---
 
-*All thresholds provisional. See [neurogrid_config.json] and
+*All thresholds provisional. See [neurogrid_config.json](neurogrid_config.json) and
 [sustain_replay_analysis.md](sustain_replay_analysis.md) for parameter justifications.*
